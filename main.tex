@@ -13,11 +13,12 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{amsthm}
 
 \definecolor{darkblue}{RGB}{255,10,10}
 
 
-
+\newtheorem{prop}{Proposition}
 
 \usepackage{enumitem}
 
@@ -52,11 +53,22 @@
 \begin{abstract}
 
 
-The literature on Judicial Politics has usually suggested that Presidents could guarantee their power over Supreme Courts provided that they nominated at least half of the bench. This theory relies on specific assumptions which
-constitute the foundation of most Political Science studies on collective behavior. We argue, however, that those assumptions cannot always be replicated since individual justices have primacy over the collective body. The Brazilian Supreme Court is a good example, since there are a couple of institutional rules that allow
-each justice to stop or change the result of a judgment without hearing his/her peers. In this setting, where individual behavior is underscored, there is a need for
+The literature on Judicial Politics has usually suggested that 
+Presidents could guarantee their power over Supreme 
+Courts provided that they nominated at least 
+half of the bench. This theory relies on specific assumptions which
+constitute the foundation of most Political Science studies 
+on collective behavior. We argue, however, that those 
+assumptions cannot always be replicated since individual justices 
+have primacy over the collective body. The Brazilian Supreme Court 
+is a good case, since there are a couple of institutional rules that allow
+each justice to pause or change the result of a judgment 
+without hearing his/her peers. In this setting, where 
+individual behavior is underscored, there is a need for
 a new theory to investigate how actors, including the President, can
-influence the final result of a judgment. We develop in the current study a formal argument that subsumes those particularities. Finally, we derive implications for judicial independence studies. 
+influence the final result of a judgment. We develop in the current 
+study a formal argument that subsumes those particularities. 
+Finally, we derive implications for judicial independence studies. 
 
 
 \vspace{.5cm}
@@ -72,8 +84,13 @@ influence the final result of a judgment. We develop in the current study a form
 \section{Introduction}
   
 
-Many studies in Judicial Politics have been trying to understand what judicial independence means and to what extent Courts are affected by other political actors. These have been the central themes 
-of various analyses in the area, such as \citet{ferejohn1998independent,hanssen2004there,helmke2009regimes,helmke2014inducing,ginsburg2014does}, among other  articles. 
+Many studies in Judicial Politics have been trying 
+to understand what judicial independence means and 
+to what extent Courts are affected by other 
+political actors. These have been the central themes 
+of various analyses in the area, such as 
+\citet{ferejohn1998independent,hanssen2004there,helmke2009regimes,
+helmke2014inducing,ginsburg2014does}, among other  articles. 
 
 For several reasons, an important aspect of judicial independence investigates the relationship 
 between government and Judiciary. Since \citet{federalists}, one of the most laudable objectives of constitutional theory has been insulating justices from possible influences coming from other Powers. Among American Politics scholars, it is widely acknowledged
@@ -292,7 +309,7 @@ Assume the influencer has a preference situated
 at $u_i$ in the ideological scale and he/she wants a decision
 in a lawsuit the closest possible to his preference.
 In this model, we make the constraint that lawsuits can have
-only two outcomes: aye ($y$) and nay ($n$). Without loss of
+only two outcomes: aye ($y$) and nay ($n$) (to keep the \emph{status quo}). Without loss of
 generality, the preferabe outcome for the influecer here will
 be given by $y$. If $y$ is closer to $u_i$,
 he/she will try to influence the Court to take this decision.
@@ -314,7 +331,12 @@ only the price of the median justice.
 
 Therefore, a possible influencer will have to pay the price, at least,
 of the median justice, and, at most, this quantity summed to
-equal to the prices of $n/2$ justices. A possible
+equal to the prices of $n/2$ justices. Calling this price $c_m$: 
+\begin{equation} 
+	p_m \leq c_m  \leq \sum\limits_{j=1}^{\frac{n}{2}}p_j + p_m
+\end{equation}
+	
+A possible
 interaction with other influencers is not being considered in this model.
 Strategies taken by actors in order to reduce the cost are also not being
 assumed. In other words, if the government wants to pack the Court or
@@ -340,35 +362,124 @@ How would an influencer behave in this case? With what strategy
 would he/she try to influence the Court? For this desideratum, 
 we need a new model. 
 
+Consider the case that the influencer has a lawsuit against him/herself.
+In this situation, he would want to pause it for inde termined time in 
+order to preserve his outcome of preference. He/she can, thus, count on the
+ability of one justice to manipulate the agenda-setting mechanisms.
+In other words, he/she must pay the price of only one justice, the cheaper one.
+The cost is determined by: 
 
-Each justice utility function is determined by three parameters: \begin{enumerate} \item $\alpha_{jk}(d)$, which represents the stance of a judge regarding a specific decision in a lawsuit. $\alpha_{jk}(d)$ is described by the difference between two points in the Euclidean space, $\alpha_{jk}(d) = x_{jk}(d) - p_{j}$, such that $x$ represents the utility a certain result of a case for the justice, and $p$ the result of greatest utility. $\alpha_{jk}(d)$ is randomly distributed from a normal distribution with mean 0 and variance $\sigma_{\alpha}^2$. \item $\beta_{ji}$, which accounts for the tendency of the judge to agree with a possible influence from $i$. It is obtained from a normal distribution with variance $\sigma_{\beta}^2$ and mean 0. In other words, each justice has a tendency to be subjected to pressure from a certain influencer. \item and $c_{ik}$, accounting for the cost paid by a influencer in a certain case. This parameter is constrained to be positive. The cost might represent any strategy by the influencer to influence a justice, for instance, bribery.  \end{enumerate}  A utility function of a justice is represented by \begin{equation} U_{ijk}(d) = -(x_{jk}(d) - p_{j})^2  + \beta_j c_{ik} \end{equation}.  
+\begin{equation} 
+	c_1 = min(p_1, p_2, ..., p_n)
+\end{equation}
 
-We also define the probability of a justice stop a lawsuit by \begin{equation} P(U_{ijk}(d)) = \frac{1}{1+e^{-U_{ijk}(d)}}\end{equation}, such that $d$ means stopping it.
+Now consider the opposite situation: the influencer files a lawsuit
+and aimes a certain outcome. This lawsuit is randomly distributed
+to a justice whose price is $p_j$. The influencer, then, faces two
+paths: a) to pay the individual price $p_j$ or; b) to pay the collective price 
+described by the median justice model.  Of those two choices, he/she will pick
+the cheapest. Thus, 
+
+\begin{equation} 
+	c_2 = min(p_j, c_m)
+\end{equation}
 
 
-The utility for the influencer is determined by \begin{equation} U_{i} = u_{k}(d)*P_k - c_{i} \end{equation}. $u_{k}(d)$ represent the utility for him/her of a lawsuit $k$ being stopped, $P_k$ the probability of this situation happens, and $c_{i}$, the cost he intends to pay.   He might be a plaintiff or a defendant. Those situations should be understood separately, since they have different implications; however we consider only the second one.
+Taking those costs for granted, we conclude that Courts 
+with any of those two characteristics will tend to be 
+more dependent than Courts where collective decisions 
+prevail. In order to do that, we just have to prove that
+any of those costs $c_1$ and $c_2$ will always be less or equal
+than $c_m$, the cost for collective Courts.
 
-The lawsuit starts and is distributed to a rapporteur $j$, which possess a tendency $\beta_{ji}$. $i$ is an actor with strong interest in a certain result for this lawsuit. He/she believes that the Court might take a decision against him and intends to stop or retard this case. In other words, he will only do that if he considers that the probability of stopping a case times the utility of it is higher than the a possible cost. If not, the solution is trivial, and he will not try to influence the Court. Since cost might be high for a possible influence, this situation seems to be the most common in the Brazilian Supreme Court.  
+\begin{prop}
+ $c_m$ is always less or equal than $c_1$ or $c_2$
+\end{prop}
 
-However , if the influencer intends to influence a justice, he/she will consider its beliefs about the probability of obtaining a favorable decision. \autoref{modelo-grafico} shows the probability, given certain values for the parameters.
+\begin{proof}
+
+	Firstly, we prove that $c_2$. As, by the definition,
+	$c_2$ is the minimum of $c_m$ or $p_j$, this suffices
+	to prove.
+
+	Secondly, we prove that $c_1$ is less or equal
+	than $c_m$. The definition of $c_m$ indicates that
+	the minimum possible value of $c_m$ will be $p_m$.
+	With the definition of $c_1$ , we have
+	$min(p_1, p_2, ..., p_n) \leq p_m$. So this part is also proved.
+
+\end{proof}
+
+This theorem shows, therefore, that Courts where too many
+powers are granted to justices, including the power of pause
+lawsuits and take individual decision, are more suited to
+judicial dependence than Courts where group decision are
+always necessary.% Change this paragraph
 
 
-\begin{figure}[htb]
-\label{modelo-grafico}
-\caption{Probability of a justice stopping a lawsuit }
-\includegraphics[scale=.8]{modelo.png}
-\centering
-\end{figure}
+\subsection{Implications for Judicial Independence studies}
+
+If we assume this new model is a good representation
+of the reality of some Courts in the world,
+ different conclusions regarding Judicial
+Politics main conclusions must be changed. For example,
+rules regarding agenda-setting impact immensely the
+extension of judicial independence.
+In this argument, powers granted to individual 
+justices can make them
+more powerful and create new paths where they can be influenced.
+
+Researchers, however, tend to overemphasize aspects 
+of the relationship between the Judiciary and 
+the other powers that obscure the understanding
+of independence. For example, they tend to look to 
+aspects such as the tentatives of packing 
+the Court and nominating judges and non-compliance of
+decisions. The problem with this point of view is 
+it fails to understand possible endogeinity inside the
+evidence. If a Court does not historically have justices
+being impeached, this fact might mean that it is deferent to 
+the other powers, not the contrary.% make the specific citations
+
+Literature has seen Brazil 
+as a country with high rates
+of independence \citep{rios2006institutional, taylor2008judging}.
+\citet[p. 44]{taylor2008judging} expressively points out:
+
+\begin{quote}
+    (...) Brazil's federal courts are strongly independent of
+	the elected branches. Judicial decisions are made without
+	undue concern for the executive or legislative branches'
+	reaction; compliance with court decisions by public bureaucracies
+	is largely expected; and recent history suggests that no
+	retaliation is to be expected in terms of court budgets
+	or administrative freedom.
+\end{quote}
+This figure is contrasted with other Courts in South America, 
+for instance, the Argentine one, with a history of packing
+and impeachment.
+
+
+
+
+
+
+\subsection{Hypothesis}
+
+
 
 This model implies a few hypothesis (proofs in the appendix): \begin{hypothesis} \item \emph{The influencer will only try to influence those justices who, he thinks, have a positive tendency to being influenced.} \item \emph{If the influencer can only choose one justice to influence, he/she will try to influence that one with the greatest value for $\beta$, given the constraint of H1, if justices have the same tendency to stop a lawsuit. } \item \emph{Regardless of the value of $\alpha$, the influencer will try to influence the justice whose $\beta$ is higher.} \item \emph{Depending on the cost, it is reasonable to assume that two or three justices are sufficient to guarantee that a probability of a case being stopped is close to 1 }  \end{hypothesis}
 
-All in all, our model shows that, in environment where majority rule is present, but individual behavior is emphasized, influencing one or two justices are sufficient to control the whole Court. This fact has an strong implication for judicial independence studies, since it is needless to employ strategies as packing the Court or removing judges to have a strong influence.
 
-In Brazil, at least after the Constitution of 1988, there are no cases in which justices were removed and it is quite noticeable that the president does not care for a strong identification. This evidence is in complete accordance to what our model would predict. 
+\section{Data and Results}
 
-%\section{Case Studies}
-
-%In this section, we will discuss some cases in Brazil that fit our model. It is not easy to test it, using %quantitative data. The main problem is there is not sufficient data to build a robust statistical model. %Qualitatively, it is also difficult to test it, because there does not exist reliable manner of %identifying lobby is happening. We rely exclusively on what newspaper presumes.
+In this section, we will discuss some cases in Brazil 
+that fit our model. It is not easy to test it, using 
+quantitative data. The main problem is there is not 
+sufficient data to build a robust statistical model. 
+Qualitatively, it is also difficult to test it, because 
+there does not exist reliable manner of identifying 
+lobby is happening. We rely exclusively on what newspaper presumes.
 
 %\subsection{Allowances for judges in Brazil}
 
